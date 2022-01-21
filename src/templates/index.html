@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+   
+   
+   <style>
+   body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background-image: url(z-index.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1{
+  color: black;
+  text-align:center;
+  padding-top:40px;
+  font-size:30px;
+}
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.formWraper{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 25%;
+    margin-top: 80px;
+    /* border-radius: 10px; */
+    box-shadow:0px 0px 20px black;
+    background-color: rgba(0, 0, 100, 0.8);
+    color: white;
+
+    
+}
+ 
+/* code for left sectin of form */
+.formDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+    /* align-items: center; */
+    /* padding: 8%; */
+    /* background-color: lavender; */
+     /* justify-content: center; */
+    /* border-radius: 10px 0px 0px 10px; */
+    /* background-color: aliceblue;    */
+}
+.formDiv h2 {
+    color: white;
+    /* padding: 1.5rem; */
+    /* margin-top: 140px; */
+}
+
+ 
+/* code for right sectin of the registration form */
+.welcomeDiv{
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}  
+
+.welcomeDiv h2  {
+    /* margin-top: 190px; */
+}
+
+ 
+.btn{
+    width: 70%;
+    padding: 1.5rem;
+    background-color: green;
+    /* margin-top: 15px; */
+    color: lavender;
+    border-radius: 20px;
+    border-style: none;
+    /* background: transparent; */
+    background-color:transparent;
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid rgb(247, 243, 243);
+}
+
+.btn2{
+    width: 70%;
+    padding: 1.5rem;
+    background-color:transparent;
+    /* margin-top: 15px; */
+    color: lavender;
+    border-radius: 20px;
+    border-style: none;
+    border: 2px solid rgb(247, 243, 243);
+}
+ 
+/* CSS mouse hover efects */
+.btn:hover, .btn2:hover{
+    background-color: rgb(7, 80, 35);
+    color: whitesmoke;
+}
+   </style>
+    
+    
+</head>
+ 
+<body>
+    <h1>Welcome to Admin Page</h1>
+    <div class="container">
+        <dive class="formWraper">
+ 
+            
+ 
+            <div class="formDiv">
+                <h2>Add Train</h2>
+               
+                
+                <a href="AddProduct.html"/"/addProduct"><button class="btn">ADD</button>
+            </div>
+ 
+            
+            <div class="formDiv">
+                <h2>Display Train List</h2>
+                
+                <a href="DisplayProduct.html"/"/displayProducts"><button class="btn2">DISPLAY</button></a>
+            </div>
+ 
+        </dive>
+    </div>
+ 
+</body>
+ 
+</html>

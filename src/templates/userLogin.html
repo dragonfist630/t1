@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/userLogin.css" />
+    <title>User Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="inner-box" id="card">
+          <div class="card-front">
+            <h2>USER LOGIN</h2>
+            <form th:action="@{/login}" class="signin" method="post">
+              <input
+                name="userName"
+                login.jpg
+                type="text"
+                class="input-box"
+                placeholder="Username"
+                required
+              />&nbsp;
+              <input
+                name="password"
+                type="password"
+                class="input-box"
+                placeholder="Password"
+                required
+              /><br />
+              <button type="submit" class="submit-btn">Login</button><br />
+              <br /><input type="checkbox" /><span>Remember Me</span>
+            </form>
+            <button type="button" class="btn" onclick="openRegister()">
+              I'm New Here
+            </button>
+            <!-- <a href="">Forget Password</a> -->
+          </div>
+          <div class="card-back">
+            <h2>Register</h2>
+            <form action="/register" class="register" method="post">
+              <input
+                name="fullName"
+                type="text"
+                class="input-box"
+                placeholder="Your Full Name"
+                required
+              />&nbsp;&nbsp;
+              <input
+                name="userName"
+                type="text"
+                class="input-box"
+                placeholder="Username"
+                required
+              />&nbsp;&nbsp;&nbsp;
+              <input
+                name="email"
+                type="email"
+                class="input-box"
+                placeholder="Enter your email"
+                required
+              />&nbsp;&nbsp;
+              <input
+                name="number"
+                type="phone"
+                class="input-box"
+                placeholder="Enter your phone no."
+                required
+              />&nbsp;&nbsp;&nbsp;
+              <input
+                name="password"
+                type="password"
+                class="input-box"
+                placeholder="Enter your password"
+                required
+              /><br />
+
+              <button type="submit" class="submit-btn">Register</button><br />
+              <br /><input type="checkbox" /><span>Remember Me</span>
+            </form>
+            <button type="button" class="btn" onclick="openLogin()">
+              I've an account
+            </button>
+            <!-- <a href="">Forget Password</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var card = document.getElementById("card");
+
+      function openRegister() {
+        card.style.transform = "rotateY(-180deg)";
+      }
+      function openLogin() {
+        card.style.transform = "rotateY(0deg)";
+      }
+    </script>
+  </body>
+</html>

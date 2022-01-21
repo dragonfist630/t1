@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Ticket</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<style type="text/css">
+.container{ 
+	max-width:1000px;
+	padding: 0px 100px;
+	background:rgba(255,255,255,.2);
+	color: black;}
+img{
+	width: 2rem;
+	height: 2rem;
+}
+.header_warp{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1rem;
+}
+.text_wrap{
+	text-align: center;
+	line-height: 10px;
+}
+.mid_text{
+	font-size: .5rem;
+}
+.train_details{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.train_details>span{
+	font-size: 13.5px;
+}
+.table{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.table>span{
+   font-size: 13.5px;
+}
+.price_wrap{
+	border: 1px solid black;
+	padding: .5rem;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header_warp">
+            <img src="data:image/jpeg;base64,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" alt="right_image">
+			<div class="text_wrap">
+				<h6> <b>E-Ticket Service</b></h6> 
+				<span> <b> Electronic Reservation Service(Person User) </b></span>		
+			</div>
+			<img src="http://drvidyahattangadi.com/wp-content/uploads/2014/06/Inidan-Railways.jpg" alt="left_image">
+		</div> <br>
+		<p class="mid_text">
+			1.You can travel on e-ticket sent on SMS or take a Virtual Reservation Message (VRM) along with any one of the prescribed ID in original. Please do not print the ERS unless extremely necessary. This Ticket will be valid with an ID proof in original. Please carry original Identity proof. If found traveling without original ID procf, passenger will be treated as without ticket and charged as per extent Railway Rules.
+        <br> 2.Only confirmed/Partially confirmed E-ticket is valid for travel.
+<br><b> <u>
+3.Fully Waltlisted E-ticket is invalid for travel If it remains fully waltlisted after preparation of chart and the refund of the booking amount shall be credited to the account used for payment for booking of the ticket. Passengers travelling on a fully waitlisted e-ticket will be treated as Ticketless.
+</u></b> <br>
+4.Valid IDs to be presented during train journey by one of the passenger booked on an e-ticket:- Voter Identity Card/Passport / PAN Card / Driving License /Photo ID card issued by Central/State Govt/Public Sector Undertakings of State / Central Government ,District Administrations, Municipal bodies and Panchayat Administrations which are having serial number / Student Identity Card with photograph issued by recognized School or College for their students/Nationalized Bank Passbook with photograph/Credit Cards issued by Banks with laminated photograph/Unique Identification Card "Aadhaar", m-Aadhaar, e-Aadhaar. /Passenger showing the Aadhaar/Driving Licence from the "Issued Document section by logging into his/her DigiLocker account considered as valid proof of Identity. (Documents uploaded by the user l.e. the document in "Uploaded Document section will not be considered as a valid proof of identity).
+<br> 5.Service Accounting Code (SAC) 996411: Local land transport services of passengers by railways for distance upto 150 KMs Service Accounting Code (SAC) 996416: Sightseeing transportation services by railways for Tourist Ticket Service Accounting Code (SAC) 996421: Long distance transport services of passengers through rail network by Railways for distance beyond 150 KMs
+<b> <u>
+<br> 6.While booking this ticket, you have agreed of having read the Health Protocol of Destination State of your travel. You are again advised to clearly read the Health Protocol advisory of destination state before start of your travel and follow them properly.
+</u></b>
+		</p>
+         <div class="train_details">
+			<span style="margin: 0px;"><b>PNR:</b><span id="PNR"></span><span id="pnrinit"></span></span>
+			<span><b>Train Number& Name:</b><span id="tno"></span> & <span id="tname"></span></span>
+			<!-- <span><b>Train Name:</b></span>   -->
+			<span><b>From:</b><span id="s"></span></span>
+			<span><b>To:</b><span id="d"></span></span>							 
+		</div> <hr>
+		<div class="table">
+				<span><b>Name: </b><span id="name"></span></span>
+				<span style="border:none;"><b>Age: </b><span id="age"></span></span>
+				<span style="border: none;"><b>Sex: </b><span id="gender"></span></span>
+				<span style="border: none;"><b>Travel Date: </b><span id="date"></span></span>					
+		</div>
+		<div class="price_wrap">
+			<span><b>Total Fare:</b></span><br>
+			<span style="color: green;"><b>₹<span id="fare"></span></b></span> 
+		</div>
+		<h6>Important:</h6>
+		<p class="mid_text">
+			1.For details, rules and terms & conditions of E-Ticketing services, please visit <a href="#">www.namastebharat.co.in. </a>
+<br> 2 Departure time and Arrival Time printed on this ERS and VRM sent through mail are liable to change. Please Check correct departure, arrival from Railway Station Enquiry, Dial 139 or SMS RAIL to 138
+ <br> 3.There are amendments in certain provision of Refund Rules. Refer Amended Refund Rules w.o.f 12-Nov-2015 (details available on www.irctc.co.in under heading General Information Rufes & Pollicles)
+<br> 4.The accommodation booked is not transferable and is valid only if the ORIGINAL ID card prescribed is presented during the journey. The SMS/VRMERS along with valid id card of any one the passenger booked one ticket proof in original would be verified by TTE with the name and PNR on the chart. If the Passenger fall to produced/display SMS/VRM/ERS due to any eventualitydoss, damaged mobile laptop etc.) but has the prescribed original proof of identity, a penalty of Rs.50/- per ticket as applicable to such cases will be levied. The ticket checking staff on board/off board will give excess fare ticket for the same. 
+<br> 5.E-ticket cancellations are permitted through www.irctc.co.in by the user.
+<br> 6.PNRs having fully waitlisted status will be dropped and the names of the passengers on such tickets will not appear on the chart. They are not allowed to board the train. However the names of PARTIALLY waitlisted/confirmed and RAC ticket passenger will appear in the chart. 
+<br> 7.Obtain certificate from the TTE /Conductor in case of (a) PARTIALLY waitiated o-ticket when LESS NO. OF PASSENGERS traval, (b)A.C.FAILURE. (ITRAVEL IN LOWER CLASS. This original certificate must be sent toGGM (IT), IRCTC, Internet Ticketing Centre, IRCA Building, State Entry Road, New Delhi-110055 after filing TDR online within prescribed time for claiming refund.
+<br> 8.In case of Partial confirmed/RAC/Walt listed ticket, TDR should be filed online within prescribed time In case NO PASSENGER is travelling for processing of refund as per Railway refund rules
+<br> 9.While TDR refund requests are filed & registered on IRCTC website www.ircta.co.in, they are processed by Zonal Railways as per Railway Refund Rules (detail available on www.inco.co in under heading important Information->Refund Cancellation Rules.
+<br> 10.Confirmed ticket can be cancelled upto thirty minutes before scheduled departure of the train.
+		</p>
+		<input type="button" value="Print" class="btn btn-primary" onclick="window.print()">
+	</div>
+	<script>
+	
+	const url = new URL(window.location.href);
+   document.getElementById("name").innerHTML = url.searchParams.get('name');   
+   document.getElementById("age").innerHTML = url.searchParams.get('age');  
+   document.getElementById("gender").innerHTML = url.searchParams.get('gender');   
+   document.getElementById("date").innerHTML = url.searchParams.get('date');
+   document.getElementById("tname").innerHTML= url.searchParams.get('tname');   
+   document.getElementById("tno").innerHTML = url.searchParams.get('tno');  
+   document.getElementById("fare").innerHTML= url.searchParams.get('f');   
+   document.getElementById("s").innerHTML= url.searchParams.get('s');
+   document.getElementById("d").innerHTML= url.searchParams.get('d');
+   a = parseInt(Math.random()*1000);
+   a = a + "-"
+document.getElementById("PNR").innerHTML= a;
+document.getElementById("pnrinit").innerHTML= parseInt(Math.random()*10000000);
+	</script>
+</body>
+</html>

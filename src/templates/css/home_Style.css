@@ -1,0 +1,103 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html, .wrapall{
+  background-color: whitesmoke
+}
+
+.above-image {
+  display: flex;
+  flex-direction: column;
+}
+#bgimg {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+  opacity: 0.8;
+ }
+span {
+  z-index: 10;
+  position: relative;
+  top: 1.5em;
+  padding: 1.5rem;
+  font-size: 43px;
+  font-family: "Poppins", sans-serif;
+}
+.containers {
+  position: relative;
+  align-items: center;
+  padding: 1.5rem;
+  transform: translate(1rem, 7rem);
+  background-image: linear-gradient(rgba(0, 0, 100, 0.8), rgba(0, 0, 100, 0.8)),url(train1.jpg);
+  color: white;
+  border-radius: 1rem;
+  width: 2px;
+  min-width: 55rem;
+}
+.wrap_gender{
+    height: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 20rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  height: 2.5rem;
+  background: transparent; 
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+}
+::placeholder{
+  color: white;
+}
+input:active{
+  border: 2px solid white;
+}
+#radio{
+  height: 1rem;
+  width: 1rem;
+  margin: 0.5rem;
+}
+label{
+  margin: 1rem;
+  
+}
+#btn {
+  color: white;
+  background-color: black;
+  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem;
+  border-radius: 1rem;
+  float: right;
+  padding: 0.2rem;
+  margin: 0.5rem;
+  margin-top: 1rem;
+}
+input:hover{
+  box-shadow: 0 0 40px 20px rgba(202,201,201,0.16);
+  
+}
+#btn:hover{
+  box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+}
+::selection{
+  background-color: yellow;
+  color: black;
+}
+/*This is to highlight "Travelling" in <span>*/
+b{
+  background-color: yellow;
+}

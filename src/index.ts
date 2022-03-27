@@ -1,4 +1,4 @@
-import "./env.ts");
+import "./env.ts";
 import { app } from "./app";
 
 const server = app.listen(app.get("port"), () => {
